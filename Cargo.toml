@@ -2,7 +2,12 @@
 name = "cache-models"
 version = "0.1.0"
 edition = "2024"
+repository = "https://github.com/danielruss/cache-models"
 
 [dependencies]
 clap = { version = "4.6.7", features = ["derive"] }
 soccer-rs = { path = "../soccer-rs", version = "0.1.10" }
+
+[profile.dist]
+inherits = "release"
+lto = "thin"
